@@ -23,8 +23,6 @@ from api.routers.test import seeding
 app = FastAPI()
 #Base.metadata.create_all(bind=engine)
 origins_env = os.getenv("CORS_ORIGINS", "")
-origins = [url.strip() for url in origins_env.split(",") if url.strip()]
-print("INITIALIZED WITH ORIGINS:"+origins)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  
 UPLOADS_DIR = os.path.abspath(os.path.join(BASE_DIR, "../uploads"))
 
@@ -36,7 +34,10 @@ app.mount(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,         # or ["*"] to allow any
+    allow_origins=[
+        "https://skripsi-mlmadmin-production.up.railway.app",
+        "https://skripsi-mlmadmin.vercel.app/"
+    ],         # or ["*"] to allow any
     allow_credentials=True,
     allow_methods=["*"],           # GET, POST, PATCH, etc.
     allow_headers=["*"],
