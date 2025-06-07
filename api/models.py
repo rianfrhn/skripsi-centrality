@@ -123,4 +123,5 @@ class SpecialKeys(Base):
     
 
 def initialize(base, engine):
+    return
     base.metadata.create_all(engine)
