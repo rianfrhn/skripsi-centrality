@@ -36,8 +36,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://skripsi-mlmadmin-production.up.railway.app",
-        "http://skripsi-mlmadmin.vercel.app/",
-        "http://localhost:5173/"
+        "http://skripsi-mlmadmin.vercel.app",
+        "http://localhost:5173"
     ],         # or ["*"] to allow any
     allow_credentials=True,
     allow_methods=["*"],           # GET, POST, PATCH, etc.
