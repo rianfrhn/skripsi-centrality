@@ -34,10 +34,7 @@ app.mount(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://skripsi-mlmadmin-production.up.railway.app",
-        "https://skripsi-mlmadmin.vercel.app/"
-    ],         # or ["*"] to allow any
+    allow_origins=["*"],         # or ["*"] to allow any
     allow_credentials=True,
     allow_methods=["*"],           # GET, POST, PATCH, etc.
     allow_headers=["*"],
