@@ -3,9 +3,9 @@ from fastapi import HTTPException
 from sqlalchemy import and_, func, or_
 from sqlalchemy.orm import Session
 from datetime import date, datetime, timedelta
-from schemas.misc import SimpleCount
-import models
-from schemas import(
+from api.schemas.misc import SimpleCount
+from api import models
+from api.schemas import(
     installment as installment_schema,
     payment as payment_schema
 )

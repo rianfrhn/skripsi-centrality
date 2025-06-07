@@ -2,9 +2,9 @@ from datetime import date, datetime, timedelta
 from sqlalchemy import func
 from sqlalchemy.orm import Session
 from passlib.context import CryptContext
-from schemas.misc import SimpleCount
-import models
-from schemas import(
+from api.schemas.misc import SimpleCount
+from api import models
+from api.schemas import(
     agent as agent_schema,
     misc as misc_schema
 )

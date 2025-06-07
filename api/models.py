@@ -2,7 +2,7 @@ from sqlalchemy import Boolean, Column, DateTime, Float, ForeignKey, Integer, St
 
 from sqlalchemy.orm import relationship
 
-from database import Base, engine
+from api.database import Base, engine
 
 class Installment(Base):
     __tablename__ = "installments"

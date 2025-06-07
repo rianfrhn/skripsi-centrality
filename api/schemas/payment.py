@@ -2,7 +2,7 @@ from typing import Optional
 from pydantic import BaseModel
 from datetime import datetime
 
-from schemas.installment import InstallmentRead
+from api.schemas.installment import InstallmentRead
 
 class PaymentBase(BaseModel):
     amount: float

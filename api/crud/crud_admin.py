@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from passlib.context import CryptContext
-import models
-from schemas import(
+from api import models
+from api.schemas import(
     admin as admin_schema
 )
 from .crud_base import CRUDBase

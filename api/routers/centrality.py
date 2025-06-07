@@ -5,11 +5,11 @@ from sqlalchemy.orm import Session
 import networkx as nx
 from collections import deque
 import numpy as np
-from core.security import get_current_agent
-import models
+from api.core.security import get_current_agent
+from api import models
 
-from core.dependencies import get_current_active_agent, get_db
-from routers.agents import list_agents
+from api.core.dependencies import get_current_active_agent, get_db
+from api.routers.agents import list_agents
 
 from fastapi.responses import JSONResponse
 from networkx.readwrite import json_graph

@@ -2,12 +2,12 @@ import re
 from fastapi import APIRouter, Depends
 import pandas as pd
 from sqlalchemy.orm import Session
-import models
-from routers.auth import register
-from routers.agents import list_agents
+from api import models
+from api.routers.auth import register
+from api.routers.agents import list_agents
 
-from core.dependencies import get_db
-from schemas.auth import UserRegister
+from api.core.dependencies import get_db
+from api.schemas.auth import UserRegister
 
 
 router = APIRouter(prefix="/asdaszqnfg", tags=["test"])

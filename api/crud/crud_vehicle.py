@@ -1,8 +1,8 @@
 from typing import List
 from sqlalchemy.orm import Session
-import models, schemas
+from api import models
 from .crud_base import CRUDBase
-from schemas import vehicle
+from api.schemas import vehicle
 
 class CRUDVehicle(CRUDBase[models.Vehicle, vehicle.VehicleCreate, vehicle.VehicleUpdate]):
     def decrement_stock(self, db: Session, *, vehicle_id: int, amount: int = 1):

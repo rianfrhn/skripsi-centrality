@@ -2,12 +2,11 @@ from math import floor
 from fastapi import APIRouter, Depends, HTTPException
 from typing import List
 from sqlalchemy.orm import Session
-import crud
-from schemas import(
+from api.schemas import(
     vehicle as vehicle_schema
 )
-from crud.crud_vehicle import vehicle as vehicles
-from core.dependencies import get_db, get_current_active_agent
+from api.crud.crud_vehicle import vehicle as vehicles
+from api.core.dependencies import get_db, get_current_active_agent
 
 router = APIRouter(prefix="/vehicles", tags=["vehicles"])
 

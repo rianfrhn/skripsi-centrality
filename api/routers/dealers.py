@@ -1,12 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
 from typing import List
 from sqlalchemy.orm import Session
-import crud
-from schemas import(
+from api.schemas import(
     dealer as dealer_schema
 )
-from crud.crud_dealer import dealer as dealers
-from core.dependencies import get_db
+from api.crud.crud_dealer import dealer as dealers
+from api.core.dependencies import get_db
 
 router = APIRouter(prefix="/dealers", tags=["dealers"])
 

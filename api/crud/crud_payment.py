@@ -1,8 +1,8 @@
 from sqlalchemy import func
 from sqlalchemy.orm import Session
 from datetime import date, datetime, timedelta
-import models
-from schemas import payment as payment_schema
+from api import models
+from api.schemas import payment as payment_schema
 from .crud_base import CRUDBase
 
 class CRUDPayment(CRUDBase[models.InstallmentPayment, payment_schema.PaymentCreate, payment_schema.PaymentBase]):

@@ -1,15 +1,14 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from typing import List
 from sqlalchemy.orm import Session
-from schemas.misc import ApprovalPoint, SimpleCount
-import models
-from core.security import get_current_admin, get_current_agent
-import crud
-from schemas import(
+from api.schemas.misc import ApprovalPoint, SimpleCount
+from api import models
+from api.core.security import get_current_agent
+from api.schemas import(
     agent as agent_schema
 )
-from crud.crud_agent import agent as agents
-from core.dependencies import get_db, get_current_active_agent
+from api.crud.crud_agent import agent as agents
+from api.core.dependencies import get_db
 
 router = APIRouter(prefix="/agents", tags=["agents"])
 

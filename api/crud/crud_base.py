@@ -1,7 +1,7 @@
 from typing import Generic, Type, TypeVar
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
-from database import Base
+from api.database import Base
 
 Model = TypeVar("Model", bound=Base) # type: ignore
 CreateSchema = TypeVar("CreateSchema", bound=BaseModel)

@@ -1,8 +1,8 @@
 from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
-from schemas.agent import AgentRead
-from schemas.vehicle import VehicleRead
+from api.schemas.agent import AgentRead
+from api.schemas.vehicle import VehicleRead
 
 class InstallmentBase(BaseModel):
     vehicle_id: int

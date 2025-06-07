@@ -1,17 +1,16 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from typing import List
 from sqlalchemy.orm import Session
-from schemas.misc import SimpleCount
-from schemas.payment import PaymentCreate, RevenueTotal
-from core.security import get_current_agent
-import crud
-from schemas import(
+from api.schemas.misc import SimpleCount
+from api.schemas.payment import PaymentCreate, RevenueTotal
+from api.core.security import get_current_agent
+from api.schemas import(
     installment as installment_schema,
     payment as payment_schema
 )
-from crud.crud_installment import installment as installments
-from crud.crud_payment import payment as payments
-from core.dependencies import get_db
+from api.crud.crud_installment import installment as installments
+from api.crud.crud_payment import payment as payments
+from api.core.dependencies import get_db
 
 router = APIRouter(prefix="/installments", tags=["installments"])
 

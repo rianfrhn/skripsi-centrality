@@ -2,14 +2,13 @@ import os
 from uuid import uuid4
 from fastapi import APIRouter, Depends, UploadFile, File, HTTPException
 from sqlalchemy.orm import Session
-import models
-from core.security import get_current_agent
-import crud
-from schemas import(
+from api import models
+from api.core.security import get_current_agent
+from api.schemas import(
     document as document_schema
 )
-from crud.crud_document import document as documents
-from core.dependencies import get_db, get_current_active_agent
+from api.crud.crud_document import document as documents
+from api.core.dependencies import get_db, get_current_active_agent
 
 router = APIRouter(prefix="/documents", tags=["documents"])
 

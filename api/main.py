@@ -6,19 +6,19 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-from database import engine, SessionLocal, Base
-from models import initialize
+from api.database import engine, SessionLocal, Base
+from api.models import initialize
 from sqlalchemy.orm import Session
 
-from management.users import create_user
-from routers import (
+from api.management.users import create_user
+from api.routers import (
     auth, agents, vehicles,
     installments, payments, 
     documents, dealers,
     centrality,
     utils
 )
-from routers.test import seeding
+from api.routers.test import seeding
 
 app = FastAPI()
 #Base.metadata.create_all(bind=engine)

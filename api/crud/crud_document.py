@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-import models
-from schemas import document as document_schema
+from api import models
+from api.schemas import document as document_schema
 from .crud_base import CRUDBase
 
 class CRUDDocument(CRUDBase[models.Document, document_schema.DocumentCreate, document_schema.DocumentUpdate]):

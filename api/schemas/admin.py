@@ -1,6 +1,5 @@
-from pydantic import BaseModel, EmailStr
-from typing import Optional, List
-from datetime import datetime
+from pydantic import BaseModel
+from typing import Optional
 
 class AdminBase(BaseModel):
     username: str

@@ -1,8 +1,8 @@
 
 from fastapi import Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from database import SessionLocal
-from core.security import get_current_agent
+from api.database import SessionLocal
+from api.core.security import get_current_agent
 
 
 def get_db():

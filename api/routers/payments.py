@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, Query
 from typing import List
 from sqlalchemy.orm import Session
-from schemas import(
+from api.schemas import(
     payment as payment_schema
 )
-from crud.crud_payment import payment as payments
-from core.dependencies import get_db, get_current_active_agent
+from api.crud.crud_payment import payment as payments
+from api.core.dependencies import get_db, get_current_active_agent
 
 router = APIRouter(prefix="/installments/{inst_id}/payments", tags=["payments"])
 router2 = APIRouter(prefix="/payments", tags=["payments"])
