@@ -33,6 +33,16 @@ def get_my_installment(
 ):
     return installments.get_active(db, agent_id=current.id)
 
+@router.post("/apply", response_model=installment_schema.InstallmentRead)
+def apply_for_installment(
+    payload: installment_schema.InstallmentCreate,
+    db: Session = Depends(get_db),
+    current=Depends(get_current_agent),
+
+):
+    installments.apply_for_installment(db=db, payload=payload, current_agent=current)
+    
+
 
 
 @router.post("/", response_model=installment_schema.InstallmentRead)

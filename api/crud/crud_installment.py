@@ -49,6 +49,34 @@ class CRUDInstallment(CRUDBase[models.Installment, installment_schema.Installmen
             and_(self.model.agent_id == agent_id, or_(self.model.status == "Pending", self.model.status == "Accepted"))
         ).one_or_none()
     
+    def apply_for_installment(
+        self,
+        db: Session,
+        *,
+        payload: installment_schema.InstallmentCreate,
+        current_agent: models.Agent,
+    ):
+        # 1) Make sure the vehicle exists and has stock, if you want:
+        vehicle = db.query(models.Vehicle).get(payload.vehicle_id)
+        if not vehicle:
+            raise HTTPException(status_code=404, detail="Vehicle not found")
+
+        # 2) Create the installment
+        inst = models.Installment(
+            agent_id=current_agent.id,
+            vehicle_id=payload.vehicle_id,
+            total_paid=0,
+            installment_duration=payload.installment_duration,
+            remaining_duration=payload.installment_duration,
+            status="Pending",
+            applied_at=datetime.utcnow(),
+        )
+        db.add(inst)
+        db.commit()
+        db.refresh(inst)
+
+        return inst
+    
 
     def pay_installment(
         self,
