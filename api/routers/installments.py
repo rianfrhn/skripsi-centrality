@@ -40,7 +40,7 @@ def apply_for_installment(
     current=Depends(get_current_agent),
 
 ):
-    installments.apply_for_installment(db=db, payload=payload, current_agent=current)
+    return installments.apply_for_installment(db=db, payload=payload, current_agent=current)
     
 
 
